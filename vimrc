@@ -10,7 +10,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vista.vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'bronson/vim-trailing-whitespace'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
@@ -27,6 +27,7 @@ Plug 'inkarkat/vim-ingo-library'
 Plug 'inkarkat/vim-mark'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 " End Plugins
 
@@ -72,7 +73,7 @@ autocmd VimEnter * RainbowParentheses
 "" Tagbar Start
 " let g:tagbar_usearrows = 1
 nnoremap <leader>l :Vista!!<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>t :CocCommand explorer --toggle<CR>
 " Tagbar end
 
 
@@ -114,6 +115,7 @@ set hidden
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
+set directory=.,$TEMP
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300

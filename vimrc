@@ -28,6 +28,7 @@ Plug 'inkarkat/vim-mark'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 " End Plugins
 

@@ -6,6 +6,7 @@ endif
 " Start Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tek256/simple-dark'
 " Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -33,12 +34,15 @@ Plug 'honza/vim-snippets'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'puremourning/vimspector'
+"Plug 'github/copilot.vim'
 call plug#end()
 " End Plugins
 
 " Theme Start
 " colorscheme zenburn
 colorscheme tokyonight
+" colorscheme simple-dark
 set laststatus=2 "grey status bar on bottom
 set t_Co=256 " 256 Color Term
 set cc=80  " Show the line at 80ch
@@ -210,6 +214,18 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
 nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
 
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver
+
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {
       \ 'colorscheme': 'tokyonight',
@@ -342,9 +358,9 @@ vim.g.symbols_outline = {
 }
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  --ignore_install = { "javascript" }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
     -- disable = { "c", "rust" },  -- list of language that will be disabled
@@ -357,3 +373,4 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" what?

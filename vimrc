@@ -26,6 +26,7 @@ Plug 'szw/vim-maximizer'
 Plug 'mileszs/ack.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'arzg/vim-colors-xcode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'inkarkat/vim-ingo-library'
 Plug 'inkarkat/vim-mark'
@@ -41,7 +42,15 @@ call plug#end()
 
 " Theme Start
 " colorscheme zenburn
-colorscheme tokyonight
+"colorscheme tokyonight
+colorscheme xcodelight
+augroup vim-colors-xcode
+    autocmd!
+augroup END
+
+autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
+autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
+
 " colorscheme simple-dark
 set laststatus=2 "grey status bar on bottom
 set t_Co=256 " 256 Color Term
@@ -371,6 +380,7 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
 EOF
 
 " what?

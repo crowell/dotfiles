@@ -37,12 +37,14 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Plug 'puremourning/vimspector'
 "Plug 'github/copilot.vim'
+Plug 'fedorenchik/gtags.vim'
 call plug#end()
 " End Plugins
 
 " Theme Start
 " colorscheme zenburn
 "colorscheme tokyonight
+colorscheme tokyonight-day
 colorscheme xcodelight
 augroup vim-colors-xcode
     autocmd!
@@ -259,14 +261,9 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
   diagnostics = {
     enable = false,
     icons = {
@@ -295,11 +292,8 @@ require'nvim-tree'.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
@@ -320,7 +314,6 @@ vim.g.symbols_outline = {
     position = 'right',
     relative_width = true,
     width = 25,
-    auto_close = false,
     show_numbers = false,
     show_relative_numbers = false,
     show_symbol_details = true,
@@ -384,3 +377,5 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 " what?
+
+map <C-g> :GtagsCursor<CR>

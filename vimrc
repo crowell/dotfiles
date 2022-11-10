@@ -111,12 +111,12 @@ let g:EasyMotion_smartcase = 1
 	"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 "endif
 nnoremap <C-p> :Files<Cr>
-nnoremap <leader>. :Vista finder<cr>
+"nnoremap <leader>. :Vista finder<cr>
 " CtrlP
 
 " Ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 " Ack.vim
 
@@ -126,8 +126,8 @@ vnoremap <silent><C-w>z :MaximizerToggle<CR>gv
 inoremap <silent><C-w>z <C-o>:MaximizerToggle<CR>
 
 " clang-format
-map <C-K> :pyf /usr/local/Cellar/llvm/10.0.0_3/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/local/Cellar/llvm/10.0.0_3/share/clang/clang-format.py<cr>
+" map <C-K> :pyf /usr/local/Cellar/llvm/10.0.0_3/share/clang/clang-format.py<cr>
+" imap <C-K> <c-o>:pyf /usr/local/Cellar/llvm/10.0.0_3/share/clang/clang-format.py<cr>
 
 " coc
 " if hidden is not set, TextEdit might fail.
@@ -256,56 +256,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 set undodir=~/.vim/undodir
 
 lua << EOF
-require'nvim-tree'.setup {
-  disable_netrw       = true,
-  hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  open_on_tab         = false,
-  hijack_cursor       = false,
-  update_cwd          = false,
-  diagnostics = {
-    enable = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
-  update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
-  filters = {
-    dotfiles = false,
-    custom = {}
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 500,
-  },
-  view = {
-    hide_root_folder = false,
-    side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
-    number = false,
-    relativenumber = false
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true
-  }
-}
+require'nvim-tree'.setup()
 
 vim.g.symbols_outline = {
     highlight_hovered_item = true,

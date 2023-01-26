@@ -46,3 +46,7 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 source ~/.zsh/spaceship-prompt/spaceship.zsh
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select

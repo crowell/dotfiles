@@ -56,3 +56,5 @@ alias vim=nvim
 alias vi=nvim
 
 fpath=(/opt/local/share/zsh/site-functions $fpath)
+
+eval "$(rbenv init - zsh)"

@@ -53,3 +53,5 @@ zstyle ':completion:*' menu select
 
 alias vim=nvim
 alias vi=nvim
+
+fpath=(/opt/local/share/zsh/site-functions $fpath)

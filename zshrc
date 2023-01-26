@@ -18,7 +18,6 @@ SPACESHIP_GIT_SUFFIX=") "
 SPACESHIP_GIT_STATUS_SUFFIX=""
 SPACESHIP_GIT_STATUS_PREFIX=""
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stampts section
   user          # Username section
   host          # Hostname section
   dir           # Current directory section

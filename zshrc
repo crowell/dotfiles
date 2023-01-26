@@ -60,3 +60,6 @@ fpath=(/opt/local/share/zsh/site-functions $fpath)
 
 eval "$(rbenv init - zsh)"
 source /opt/local/share/nvm/init-nvm.sh
+
+export CLICOLOR=1
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd

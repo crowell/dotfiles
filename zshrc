@@ -65,4 +65,6 @@ source /opt/local/share/nvm/init-nvm.sh
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
-
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"

@@ -1,6 +1,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_RPROMPT_ADD_NEWLINE=true
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_SUFFIX=""
 SPACESHIP_USER_COLOR=135
@@ -14,7 +15,7 @@ SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_COLOR_SUCCESS="gray"
 SPACESHIP_CHAR_COLOR_FAILURE="gray"
 SPACESHIP_GIT_PREFIX="("
-SPACESHIP_GIT_SUFFIX=") "
+SPACESHIP_GIT_SUFFIX=")"
 SPACESHIP_GIT_STATUS_SUFFIX=""
 SPACESHIP_GIT_STATUS_PREFIX=""
 SPACESHIP_GIT_BRANCH_COLOR="cyan"
@@ -48,6 +49,7 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
+
 source ~/.zsh/spaceship-prompt/spaceship.zsh
 
 autoload -Uz compinit
@@ -58,6 +60,8 @@ alias vim=nvim
 alias vi=nvim
 
 fpath=(/opt/local/share/zsh/site-functions $fpath)
+
+export PATH="${PATH}":/Applications/IINA.app/Contents/MacOS:/Users/jeff/.cargo/bin
 
 eval "$(rbenv init - zsh)"
 source /opt/local/share/nvm/init-nvm.sh
@@ -70,5 +74,7 @@ alias ll="ls -alG"
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+bindkey '^[[Z' reverse-menu-complete
 setopt autocd
 setopt auto_pushd
+compinit

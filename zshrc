@@ -68,6 +68,7 @@ source /opt/local/share/nvm/init-nvm.sh
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+export EDITOR=nvim
 alias l="ls -CF"
 alias la="ls -A"
 alias ll="ls -alG"

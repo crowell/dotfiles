@@ -78,4 +78,7 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 bindkey '^[[Z' reverse-menu-complete
 setopt autocd
 setopt auto_pushd
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
 compinit

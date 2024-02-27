@@ -61,7 +61,7 @@ alias vi=nvim
 
 fpath=(/opt/local/share/zsh/site-functions $fpath)
 
-export PATH="${PATH}":/Applications/IINA.app/Contents/MacOS:/Users/jeff/.cargo/bin
+export PATH="${PATH}":/Applications/IINA.app/Contents/MacOS:/Users/jeff/.cargo/bin:/Users/jeff/tools/nvim/nvim-macos/bin
 
 eval "$(rbenv init - zsh)"
 source /opt/local/share/nvm/init-nvm.sh

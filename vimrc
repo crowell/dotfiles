@@ -44,7 +44,7 @@ call plug#end()
 " Theme Start
 " colorscheme zenburn
 "colorscheme tokyonight
-colorscheme tokyonight-day
+"colorscheme tokyonight-day
 colorscheme xcodelight
 augroup vim-colors-xcode
     autocmd!

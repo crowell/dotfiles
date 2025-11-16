@@ -36,7 +36,7 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Plug 'puremourning/vimspector'
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 Plug 'fedorenchik/gtags.vim'
 call plug#end()
 " End Plugins
@@ -277,10 +277,10 @@ keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation
-keyset("n", "Gd", "<Plug>(coc-definition)", {silent = true})
-keyset("n", "Gy", "<Plug>(coc-type-definition)", {silent = true})
-keyset("n", "Gi", "<Plug>(coc-implementation)", {silent = true})
-keyset("n", "Gr", "<Plug>(coc-references)", {silent = true})
+keyset("n", "<leader>d", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "<leader>y", "<Plug>(coc-type-definition)", {silent = true})
+keyset("n", "<leader>i", "<Plug>(coc-implementation)", {silent = true})
+keyset("n", "<leader>c", "<Plug>(coc-references)", {silent = true})
 
 
 -- Use K to show documentation in preview window

@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.font_size = 15
+config.font_size = 18
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 --config.color_scheme = 'Jellybeans'
 --config.window_decorations = "RESIZE"

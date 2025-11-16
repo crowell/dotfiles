@@ -202,3 +202,7 @@ bindkey '\C-x\C-e' edit-command-line
 
 # file rename magick
 bindkey "^[m" copy-prev-shell-word
+
+
+## CTF STUFF
+export FFSEND_HOST=http://send.shell.phish
